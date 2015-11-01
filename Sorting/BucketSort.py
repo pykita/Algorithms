@@ -13,9 +13,22 @@ class BucketSortImpl:
             if item > maxValue:
                 maxValue = item
 
-        bucketList = xrange(maxValue - minValue + 1);
+        bucketList = [None for item in xrange(maxValue - minValue + 1)];
 
         for number in unsorted_array:
-            bucketList[number - minValue].add(number)
+            bucketList[number - minValue] = number
+
+        return self.buckets_to_single_list(bucketList)
+
+    def get_alg_name(self):
+        return 'Bucket sort'
+
+    def buckets_to_single_list(self, bucketList):
+        result = []
+        for bucket in bucketList:
+            if bucket is not None:
+                result.append(bucket)
+
+        return result
 
         
