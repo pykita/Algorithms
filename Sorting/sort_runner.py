@@ -3,7 +3,7 @@ import time
 
 max_random_range = 1000000
 max_number_count_range = 1000000
-
+#another branch
 max_random_power = int(math.log10(max_random_range))
 max__number_count_power = int(math.log10(max_number_count_range))
 
